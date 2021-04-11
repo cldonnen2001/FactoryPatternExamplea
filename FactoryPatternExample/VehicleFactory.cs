@@ -7,19 +7,23 @@ namespace FactoryPatternExample
     static class VehicleFactory
     {
    
-        public static IVehicle GetTireCount(string tires, string drive = "car")
+        public static IVehicle GetTireCount(string tires, string drive)
         {
-            if (tires == "2")
+            if (tires == "2" && drive == "motorcycle")
             {
-                return new Motorcycle();  // 4 returns car output
+                return new Motorcycle();    // 2-yes  4-yes   3-yes  other-yes 
             }
             else if (tires == "4" && drive == "car")  
             {
-                return new Car();         // 2  returns this has two tires
+                return new Car();            // 2-yes  4-yes   3-yes   other-yes
+            }
+            else if (tires == "3")
+            {
+                return new TriWheel();
             }
             else
             {
-                return new Other();  // not working 
+                return new Other();       
             }
         }
 

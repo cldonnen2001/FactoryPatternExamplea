@@ -19,7 +19,7 @@ namespace FactoryPatternExample
             Console.WriteLine("How many wheels does your vehicle have?");
             string userWheel = Console.ReadLine();
 
-            IVehicle tires = VehicleFactory.GetTireCount(userWheel);
+            IVehicle tires = VehicleFactory.GetTireCount(userWheel, userVehicle);
 
             tires.NubmerOfTires();
           
